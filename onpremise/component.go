@@ -47,9 +47,6 @@ func (s *ComponentService) Create(ctx context.Context, options *ComponentOptions
 // GetListByProject gets all component from Jira project
 //
 // Jira API docs: https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-project-components/#api-rest-api-2-project-projectidorkey-components-get
-//
-// TODO Double check this method if this works as expected, is using the latest API and the response is complete
-// This double check effort is done for v2 - Remove this two lines if this is completed.
 func (s *ComponentService) GetListByProject(ctx context.Context, projectID string) ([]ComponentOptions, *Response, error) {
 	apiEndpoint := fmt.Sprintf("/rest/api/2/project/%s/components", projectID)
 	req, err := s.client.NewRequest(ctx, http.MethodGet, apiEndpoint, nil)
