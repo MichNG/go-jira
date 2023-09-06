@@ -13,6 +13,7 @@ type ComponentService service
 // CreateComponentOptions are passed to the ComponentService.Create function to create a new Jira component
 type ComponentOptions struct {
 	Self         string `json:"self,omitempty" structs:"self,omitempty"`
+	ID           string `json:"id,omitempty" structs:"id,omitempty"`
 	Name         string `json:"name,omitempty" structs:"name,omitempty"`
 	Description  string `json:"description,omitempty" structs:"description,omitempty"`
 	Lead         *User  `json:"lead,omitempty" structs:"lead,omitempty"`
